@@ -1,4 +1,4 @@
-FROM python:3.7.4
+FROM python:3.9.5
 RUN apt-get update && apt-get install -y gcc g++ make curl zlib1g-dev libjpeg-dev libxml2-dev libxslt-dev libfreetype6-dev libmupdf-dev tzdata
 ENV C_INCLUDE_PATH $C_INCLUDE_PATH:/usr/include/freetype2
 RUN python -m pip install --upgrade pip

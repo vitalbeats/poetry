@@ -12,16 +12,17 @@ We build the image locally and push it to Docker Hub.
 Note: The user must be logged in into our public docker registry via `docker login`.
 
 ```bash
-docker build . --tag=vitalbeats/poetry:1.1.11
-docker push vitalbeats/poetry:1.1.11
+docker build . --platform=linux/amd64 --tag=vitalbeats/poetry:1.1.13
+docker push vitalbeats/poetry:1.1.13
 
-docker build . --tag=vitalbeats/poetry:latest
+docker build . --platform=linux/amd64 --tag=vitalbeats/poetry:latest
 docker push vitalbeats/poetry:latest
 ```
 ## Running Locally
 ```bash
 docker run \
+    --platform=linux/amd64 \
     --name vb_poetry \
-    -it --rm poetry:1.1.11 \
+    -it --rm poetry:1.1.13 \
     --version
 ```
